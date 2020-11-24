@@ -1,6 +1,6 @@
 ﻿namespace M01
 {
-    partial class XtraForm1
+    partial class M01
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(XtraForm1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(M01));
             this.ribbonControl = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.bbiPrintPreview = new DevExpress.XtraBars.BarButtonItem();
             this.bsiRecordsCount = new DevExpress.XtraBars.BarStaticItem();
@@ -152,7 +152,6 @@
             this.bbiNew.Id = 16;
             this.bbiNew.ImageOptions.ImageUri.Uri = "New";
             this.bbiNew.Name = "bbiNew";
-
             // 
             // bbiEdit
             // 
@@ -191,7 +190,6 @@
             this.bbiSave.Id = 21;
             this.bbiSave.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("bbiSave.ImageOptions.SvgImage")));
             this.bbiSave.Name = "bbiSave";
-
             // 
             // skinRibbonGalleryBarItem1
             // 
@@ -221,7 +219,6 @@
             this.bbiExcel.Id = 26;
             this.bbiExcel.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("bbiExcel.ImageOptions.SvgImage")));
             this.bbiExcel.Name = "bbiExcel";
-
             // 
             // barButtonItem1
             // 
@@ -292,7 +289,6 @@
             this.gvAbout.OptionsView.EnableAppearanceEvenRow = true;
             this.gvAbout.OptionsView.EnableAppearanceOddRow = true;
             this.gvAbout.OptionsView.ShowGroupPanel = false;
-
             // 
             // Root
             // 
@@ -559,14 +555,14 @@
             this.emptySpaceItem17.Size = new System.Drawing.Size(740, 25);
             this.emptySpaceItem17.TextSize = new System.Drawing.Size(0, 0);
             // 
-            // XtraForm1
+            // M01
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(994, 687);
             this.Controls.Add(this.layoutControl1);
             this.Controls.Add(this.ribbonControl);
-            this.Name = "XtraForm1";
+            this.Name = "M01";
             this.Ribbon = this.ribbonControl;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "M01 : About me";
