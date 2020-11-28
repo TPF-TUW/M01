@@ -21,9 +21,31 @@ namespace M01
             UserLookAndFeel.Default.StyleChanged += MyStyleChanged;
             iniConfig = new IniFile("Config.ini");
             UserLookAndFeel.Default.SetSkinStyle(iniConfig.Read("SkinName", "DevExpress"), iniConfig.Read("SkinPalette", "DevExpress"));
+            CreateSplashScreen();
         }
 
         private IniFile iniConfig;
+
+        private void CreateSplashScreen()
+        {
+            DevExpress.XtraSplashScreen.SplashScreenManager.ShowSkinSplashScreen(
+                logoImage:null,
+                title:"MDS",
+                subtitle:"Merchandise and Development System",
+                footer: "Copyright © 2020-2021 IT Integration Team",
+                loading:"Starting...",
+                parentForm:this,
+                useFadeIn:true,
+                useFadeOut:true,
+                throwExceptionIfAlreadyOpened:true,
+                startPos: DevExpress.XtraSplashScreen.SplashFormStartPosition.Default,
+                location:default
+                );
+        }
+        private void CloseSplashScreen()
+        {
+            DevExpress.XtraSplashScreen.SplashScreenManager.CloseForm();
+        }
 
         private void MyStyleChanged(object sender, EventArgs e)
         {
@@ -33,7 +55,6 @@ namespace M01
             iniConfig.Write("SkinName", userLookAndFeel.SkinName, "DevExpress");
             iniConfig.Write("SkinPalette", userLookAndFeel.ActiveSvgPaletteName, "DevExpress");
         }
-
         private void XtraForm1_Load(object sender, EventArgs e)
         {
             StringBuilder sbSQL = new StringBuilder();
@@ -43,10 +64,7 @@ namespace M01
             sbSQL.Append("WHERE (VH.ActiveType = 1) ");
             sbSQL.Append("ORDER BY FL.FunctionNo ");
             new ObjDevEx.setGridControl(gcAbout, gvAbout, sbSQL).getData(false, false, true, true);
+            CloseSplashScreen();
         }
-
-       
-
-
     }
 }
